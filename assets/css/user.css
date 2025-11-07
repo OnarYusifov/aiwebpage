@@ -20,6 +20,20 @@
   --dashboard-bg: #2D3748;
 }
 
+/* JetBrains Mono Font */
+body {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+* {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Logo styling - white and flipped */
+.navbar-brand img {
+  filter: brightness(0) invert(1) !important;
+}
+
 /* Override Bootstrap buttons with new color scheme */
 .btn-success, .btn-primary {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
@@ -103,22 +117,43 @@ section:not(.bg-dark) p:not(.text-white):not(.text-light):not(.text-muted) {
   color: var(--text-dark) !important;
 }
 
-/* Hero text colors - only in dark sections */
+/* Hero text colors - FORCE white in dark sections */
+.bg-dark,
+.bg-dark *,
 .bg-dark h1,
 .bg-dark h2,
 .bg-dark h3,
-.bg-dark .text-white {
-  color: var(--text-white) !important;
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6,
+.bg-dark p,
+.bg-dark span,
+.bg-dark div,
+.bg-dark section,
+.bg-dark section h1,
+.bg-dark section h2,
+.bg-dark section p,
+.bg-dark .text-white,
+section:has(.bg-dark) h1,
+section:has(.bg-dark) p {
+  color: #FFFFFF !important;
 }
 
-.bg-dark p.text-white {
-  color: rgba(226, 232, 240, 0.9) !important;
+.bg-dark p {
+  color: #E2E8F0 !important;
 }
 
-/* Override - keep white text in dark sections */
-section.bg-dark .text-white,
-.bg-dark section .text-white {
-  color: var(--text-white) !important;
+/* Specific hero section text */
+.bg-dark section h1,
+.bg-dark > section > div > div > div h1,
+.bg-dark section p {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+}
+
+.bg-dark section p {
+  color: #E2E8F0 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7) !important;
 }
 
 /* Update background colors */
