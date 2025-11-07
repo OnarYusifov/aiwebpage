@@ -85,18 +85,40 @@ body {
 }
 
 main .bg-dark + section,
-section:not(.bg-dark):not(.bg-light):not(.bg-dark) {
+section:not(.bg-dark):not(.bg-light) {
   background-color: var(--content-bg) !important;
 }
 
-/* Hero text colors */
+/* Ensure text in light sections is dark */
+section:not(.bg-dark):not(.bg-dark *) h1:not(.text-white),
+section:not(.bg-dark):not(.bg-dark *) h2:not(.text-white),
+section:not(.bg-dark):not(.bg-dark *) h3:not(.text-white),
+section:not(.bg-dark):not(.bg-dark *) h4:not(.text-white),
+section:not(.bg-dark):not(.bg-dark *) h5:not(.text-white),
+section:not(.bg-dark):not(.bg-dark *) h6:not(.text-white) {
+  color: var(--text-dark) !important;
+}
+
+section:not(.bg-dark) p:not(.text-white):not(.text-light):not(.text-muted) {
+  color: var(--text-dark) !important;
+}
+
+/* Hero text colors - only in dark sections */
 .bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
 .bg-dark .text-white {
   color: var(--text-white) !important;
 }
 
 .bg-dark p.text-white {
   color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Override - keep white text in dark sections */
+section.bg-dark .text-white,
+.bg-dark section .text-white {
+  color: var(--text-white) !important;
 }
 
 /* Update background colors */
